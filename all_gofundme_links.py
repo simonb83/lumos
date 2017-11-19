@@ -79,7 +79,7 @@ def process_country_term(country_name):
             logging.info("Total rows for {}: {}".format(
                 country_name, num_rows))
         time.sleep(random.choice([0.5, 1, 1.5, 1.7]))
-    time.sleep(2)
+    return
 
 if __name__ == "__main__":
 
@@ -95,5 +95,6 @@ if __name__ == "__main__":
             country_term = ' '.join([term, country]).strip()
             country_terms.append(country_term)
 
-    with Pool(30) as p:
+    country_terms = country_terms[::-1]
+    with Pool(20) as p:
         p.map(process_country_term, country_terms)
