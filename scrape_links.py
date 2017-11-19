@@ -68,6 +68,6 @@ if __name__ == "__main__":
     url_ids = url_ids.reshape(url_ids.shape[0], )
     conn.close()
 
-    with Pool(10) as p:
+    with Pool(20) as p:
         p.map(process_url_id, url_ids)
 
