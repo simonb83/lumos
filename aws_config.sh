@@ -11,10 +11,11 @@ psql -v ON_ERROR_STOP=1 <<-EOSQL
     GRANT ALL PRIVILEGES ON DATABASE lumos TO lumos;
 EOSQL
 
-## Load tables
+git pull https://github.com/simonb83/lumos
+cd lumos
 
-git pull
-cd
+## Load tables
+psql lumos < Data/gofundme.sql
 
 pip3 install -r requirements.txt
 
