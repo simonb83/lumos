@@ -85,7 +85,8 @@ if __name__ == "__main__":
 
     logging.basicConfig(level=logging.INFO)
     # Load countries
-    countries = []
+    with open("Data/countries.txt", "r") as f:
+        countries = f.read().splitlines()
     terms = ['', 'children shelter', 'children', 'orphanage', 'orphans', 'orphan', 'street children']
     country_terms = []
 
